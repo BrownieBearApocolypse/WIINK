@@ -13,19 +13,19 @@ public class MainMenu : MonoBehaviour
         HowToMenu.enabled = false;
     }
 
-    void HowTo()
+    public void HowTo()
     {
         mainMenu.enabled = false;
         HowToMenu.enabled=true;
     }
 
-    void Return()
+    public void Return()
     {
         mainMenu.enabled = true;
         HowToMenu.enabled = false;
     }
 
-    void Exit()
+    public void Exit()
     {
         Application.Quit();
     }

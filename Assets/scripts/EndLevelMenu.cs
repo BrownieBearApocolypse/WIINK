@@ -15,18 +15,23 @@ public class EndLevelMenu : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Awake() 
     {
         endMenu.enabled = false;
     }
-   
-    void MainMenu()
+
+    public void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
 
-    void NextLevel()
+    public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
