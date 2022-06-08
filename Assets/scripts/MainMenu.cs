@@ -9,8 +9,7 @@ public class MainMenu : MonoBehaviour
     public Canvas mainMenu;
 
     private void Awake()
-    {
-        mainMenu.enabled = true;
+    {    
         HowToMenu.enabled = false;
     }
 
