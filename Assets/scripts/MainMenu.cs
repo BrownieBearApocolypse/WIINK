@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Canvas HowToMenu;
     public Canvas mainMenu;
+    public Canvas HowToMenu;
+    
 
     private void Awake()
     {    
         HowToMenu.enabled = false;
+    }
+
+    public void LoadOn()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void HowTo()
