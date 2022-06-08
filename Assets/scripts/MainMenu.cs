@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Canvas HowToMenu;
+    public Canvas mainMenu;
+
+    private void Awake()
     {
-        
+        mainMenu.enabled = true;
+        HowToMenu.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void HowTo()
     {
-        
+        mainMenu.enabled = false;
+        HowToMenu.enabled=true;
+    }
+
+    void Return()
+    {
+        mainMenu.enabled = true;
+        HowToMenu.enabled = false;
+    }
+
+    void Exit()
+    {
+        Application.Quit();
     }
 }
