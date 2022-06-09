@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
     
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
        if (other.CompareTag("Platform"))
        {
@@ -57,17 +57,7 @@ public class PlayerMovement : MonoBehaviour
            
        }
 
-        if (isGrounded == true)
-        { 
-            Debug.Log("grounded is true");
-        }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (isGrounded == false)
-        {
-            Debug.Log("Grounded is false");
-        }
-    }
+   
 }

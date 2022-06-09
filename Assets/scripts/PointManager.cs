@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PointManager : MonoBehaviour
 {
     public static PointManager instance { get; private set; }
-    public float Score;
+    public float Score = 0;
     public float pointsPerCollectable = 1;
     public Text scoreText;
     float displayScore;
