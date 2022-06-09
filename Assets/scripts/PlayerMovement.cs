@@ -19,12 +19,17 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
+
         //jumping & grounded?
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (isGrounded == true)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
-            isGrounded = false;
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W))
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
+                isGrounded = false;
+            }
         }
+            
 
         
 
@@ -49,7 +54,20 @@ public class PlayerMovement : MonoBehaviour
        if (other.CompareTag("Platform"))
        {
             isGrounded = true;
+           
        }
-       
+
+        if (isGrounded == true)
+        { 
+            Debug.Log("grounded is true");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (isGrounded == false)
+        {
+            Debug.Log("Grounded is false");
+        }
     }
 }
