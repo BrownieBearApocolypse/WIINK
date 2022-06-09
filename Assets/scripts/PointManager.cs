@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PointManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static PointManager instance { get; private set; }
+    public float score;
+    public float pointsPerCollectable = 1;
+
+
+
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(this);
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncreaseScore(float amount)
     {
-        
+        score += amount;
     }
+
+
 }
