@@ -14,7 +14,7 @@ public class PointManager : MonoBehaviour
     public float transitionSpeed = 100;
     public Canvas pointManager;
 
-    public void OnTriggerEnter2D (Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnCollisionDestory : MonoBehaviour
 {
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -12,6 +12,9 @@ public class OnCollisionDestory : MonoBehaviour
             Destroy(gameObject);
             PointManager.instance.Score += PointManager.instance.pointsPerCollectable;
             PointManager.instance.IncreaseScore(PointManager.instance.Score);
+            //GameManager.instance.Score += GameManager.instance.pointsPerCollectable;
+            //GameManager.instance.IncreaseScore(GameManager.instance.Score);
+            Debug.Log("GOtEm");
         }
     }
 }

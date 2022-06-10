@@ -8,7 +8,7 @@ public class ColourChange : MonoBehaviour
 
     public void EventMet()
     {
-        Collider.enabled = false;               
+        Collider.enabled = false;
     }
     
     public void EventOver()

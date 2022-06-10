@@ -54,10 +54,17 @@ public class PlayerMovement : MonoBehaviour
        if (other.CompareTag("Platform"))
        {
             isGrounded = true;
-           
+            //Debug.Log("Yes Ground");
        }
 
     }
 
-   
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+       // if (other.CompareTag("Player"))
+       // {
+          //  Debug.Log("No Ground");
+       // }
+    //}
+
 }
