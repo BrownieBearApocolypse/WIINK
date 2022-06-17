@@ -22,7 +22,7 @@ public class AnimationTrigger : MonoBehaviour
         {
             Triggered = true;
             Button.GetComponent<Animator>().SetTrigger("ButtonPress");
-            Debug.Log("it works");
+            //Debug.Log("it works");
         }
     }
 

@@ -14,7 +14,7 @@ public class OnCollisionDestory : MonoBehaviour
             PointManager.instance.IncreaseScore(PointManager.instance.Score);
             //GameManager.instance.Score += GameManager.instance.pointsPerCollectable;
             //GameManager.instance.IncreaseScore(GameManager.instance.Score);
-            Debug.Log("GOtEm");
+            //Debug.Log("GOtEm");
         }
     }
 }
