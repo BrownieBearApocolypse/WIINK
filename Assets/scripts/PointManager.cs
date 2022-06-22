@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class PointManager : MonoBehaviour
 {
-    public static PointManager instance { get; private set; }
-    public float Score = 0;
+    public static PointManager Instance { get; private set; }
+    public float totalScore = 0;
     public float pointsPerCollectable = 1;
     public Text scoreText;
     float displayScore;
-    public float transitionSpeed = 100;
+    public float transitionSpeed = 50;
     public Canvas pointManager;
+    
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,25 +25,27 @@ public class PointManager : MonoBehaviour
 
     public void Update()
     {
-        displayScore = Mathf.MoveTowards(displayScore, Score, transitionSpeed * Time.deltaTime);
+        displayScore = Mathf.MoveTowards(displayScore, totalScore, transitionSpeed * Time.deltaTime);
         UpdateScoreDisplay();
+
     }
 
     private void Awake()
     {
-        instance = this;
-        pointManager.enabled = false;
+        Instance = this;         
+        //pointManager.enabled = false;
     }
 
-    public void IncreaseScore(float amount)
+    public void IncreaseScore(float totalScore)
     {
-        Score += amount;
+        totalScore += pointsPerCollectable;
         
     }
 
     public void UpdateScoreDisplay()
     {
-        scoreText.text = "Score: " + Score;
+        scoreText.text = "Score: " + totalScore;
     }
+
 
 }

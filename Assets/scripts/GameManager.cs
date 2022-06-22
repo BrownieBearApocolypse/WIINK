@@ -2,46 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    public float Score = 0;
-    public Canvas highScoreCanvas;
-    public float pointsPerCollectable = 1;
-    public Text scoreText;
-    private float displayScore;
-    public float transitionSpeed = 100;
+    public static GameManager Instance;
+    public bool lastScene = false;
+    public float score, highScore, lvlScore;
+    public int SceneCount;
+    
+
+
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
             DontDestroyOnLoad(gameObject);
-            instance = this;
+            Instance = this;
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
-        highScoreCanvas.enabled = false;
+
+        
     }
 
-    public void Update()
+    public void Save()
     {
-        displayScore = Mathf.MoveTowards(displayScore, Score, transitionSpeed * Time.deltaTime);
-        UpdateScoreDisplay();
-    }
+        //player prefs save the information between game sessions
 
-    public void IncreaseScore(float amount)
-    {
-        Score += amount;
-
-    }
-
-    public void UpdateScoreDisplay()
-    {
-        scoreText.text = "Score: " + Score;
     }
 
 

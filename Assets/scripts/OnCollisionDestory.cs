@@ -10,10 +10,9 @@ public class OnCollisionDestory : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            PointManager.instance.Score += PointManager.instance.pointsPerCollectable;
-            PointManager.instance.IncreaseScore(PointManager.instance.Score);
-            //GameManager.instance.Score += GameManager.instance.pointsPerCollectable;
-            //GameManager.instance.IncreaseScore(GameManager.instance.Score);
+            PointManager.Instance.totalScore += PointManager.Instance.pointsPerCollectable;
+            PointManager.Instance.IncreaseScore(PointManager.Instance.totalScore);
+            
             //Debug.Log("GOtEm");
         }
     }
