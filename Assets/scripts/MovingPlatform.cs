@@ -18,4 +18,6 @@ public class MovingPlatform : MonoBehaviour
        player.transform.SetParent(null);
        
     }
+
+    
 }

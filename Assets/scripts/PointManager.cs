@@ -47,5 +47,9 @@ public class PointManager : MonoBehaviour
         scoreText.text = "Score: " + totalScore;
     }
 
+    public void Start()
+    {
+        GameManager.Instance.lvlScore = totalScore;
+    }
 
 }

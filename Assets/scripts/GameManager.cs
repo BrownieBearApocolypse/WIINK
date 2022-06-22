@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public bool lastScene = false;
-    public int score, highScore, lvlScore;
+    public int score, highScore;
+    public int lvlScore;
+
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        score += PointManager.Instance.totalScore;
+        score += lvlScore;
         
     }
 
