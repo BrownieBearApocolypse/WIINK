@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public bool lastScene = false;
-    public float score, highScore, lvlScore;
-    public int SceneCount;
-    
+    public int score, highScore, lvlScore;
 
-
+    private void Start()
+    {
+        Load();
+    }
 
     private void Awake()
     {
@@ -29,10 +30,22 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void AddScore(int amount)
+    {
+        score += PointManager.Instance.totalScore;
+        
+    }
+
+    public void Load()
+    {
+        score = PlayerPrefs.GetInt("score");
+        highScore = PlayerPrefs.GetInt("highscore");
+    }
     public void Save()
     {
-        //player prefs save the information between game sessions
-
+        //PointManager.Instance.totalScore += PointManager.Instance.totalScore;
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.SetInt("highscore", highScore);
     }
 
 

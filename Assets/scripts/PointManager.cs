@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class PointManager : MonoBehaviour
 {
     public static PointManager Instance { get; private set; }
-    public float totalScore = 0;
-    public float pointsPerCollectable = 1;
+    public int totalScore = 0;
+    public int pointsPerCollectable = 1;
     public Text scoreText;
     float displayScore;
-    public float transitionSpeed = 50;
+    public int transitionSpeed = 50;
     public Canvas pointManager;
     
 
@@ -33,10 +33,10 @@ public class PointManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;         
-        //pointManager.enabled = false;
+        pointManager.enabled = false;
     }
 
-    public void IncreaseScore(float totalScore)
+    public void IncreaseScore(int totalScore)
     {
         totalScore += pointsPerCollectable;
         

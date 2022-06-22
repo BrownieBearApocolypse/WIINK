@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     float moveVelocity;
     public Rigidbody2D rb2d;
     bool isGrounded = true;
-    float threshold = -50f;
+    private float threshold = -50f;
+
+
 
     void Update()
     {

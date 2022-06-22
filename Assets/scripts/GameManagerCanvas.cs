@@ -13,5 +13,15 @@ public class GameManagerCanvas : MonoBehaviour
         scoreText.text = GameManager.Instance.score.ToString();
         highScoreText.text = GameManager.Instance.highScore.ToString();
 
+        if (GameManager.Instance.score > GameManager.Instance.highScore)
+        {
+            GameManager.Instance.highScore = GameManager.Instance.score;
+            GameManager.Instance.Save();
+        }
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
