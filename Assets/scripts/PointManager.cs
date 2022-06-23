@@ -45,8 +45,7 @@ public class PointManager : MonoBehaviour
 
     public void UpdateScoreDisplay()
     {
-        scoreText.text = "Level Score: " + totalScore;
+        scoreText.text = "Level Score: " + totalScore + "/3";
     }
 
-    
 }

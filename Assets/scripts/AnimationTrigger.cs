@@ -5,30 +5,27 @@ using UnityEngine;
 public class AnimationTrigger : MonoBehaviour
 {
     public GameObject Button;
-    public bool Triggered;
+    public bool Triggered = false;
  
 
-    // Start is called before the first frame update
-    void Update()
-    {
-        Triggered = false;
-    }
-
+ 
    //use aniamtion events to track time 
 
 
     public void OnTriggerEnter2D (Collider2D other)
     {
-        if (Triggered == false && other.gameObject.tag == "Player")
+        Triggered = true;
+        if (Triggered == true && other.gameObject.tag == "Player")
         {
-            Triggered = true;
             Button.GetComponent<Animator>().SetTrigger("ButtonPress");
-            //Debug.Log("it works");
-            
+            Debug.Log("it works");
         }
     }
 
-   
+    public void AnimationEnd()
+    {
+        Triggered = false;
+        Debug.Log("False");
+    }
 
-    
 }

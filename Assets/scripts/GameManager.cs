@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public int score, highScore;
     public int lvlScore;
 
-
     private void Start()
     {
         Load();
@@ -62,6 +61,5 @@ public class GameManager : MonoBehaviour
         lvlScore = 0;
         // if previous scene = this scene { PlayerPrefs.DeleteKey("score");  }
     }
-
 
 }
