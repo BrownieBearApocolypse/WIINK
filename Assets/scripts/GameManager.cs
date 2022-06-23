@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         lvlScore = 0;
+        // if previous scene = this scene { PlayerPrefs.DeleteKey("score");  }
     }
 
 

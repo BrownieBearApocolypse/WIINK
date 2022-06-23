@@ -24,6 +24,7 @@ public class GameManagerCanvas : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(0);
+        PlayerPrefs.DeleteKey("score");
     }
 
     public void Exit()
