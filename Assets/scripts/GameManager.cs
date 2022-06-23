@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool lastScene = false;
     public int score, highScore;
     public int lvlScore;
 
@@ -15,6 +14,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Load();
+        PointManager.Instance.totalScore = lvlScore;
+        
     }
 
     private void Awake()
@@ -32,10 +33,16 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void AddScore(int amount)
-    {
+    public void AddScore(int score)
+    {      
         score += lvlScore;
-        
+        Save();
+    }
+
+    public void IncreaseScore(int totalScore)
+    {
+        lvlScore += PointManager.Instance.pointsPerCollectable;
+
     }
 
     public void Load()
@@ -45,8 +52,15 @@ public class GameManager : MonoBehaviour
     }
     public void Save()
     {
-        //PointManager.Instance.totalScore += PointManager.Instance.totalScore;
         PlayerPrefs.SetInt("score", score);
         PlayerPrefs.SetInt("highscore", highScore);
+        
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        lvlScore = 0;
+    }
+
+
 }

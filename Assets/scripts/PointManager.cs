@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class PointManager : MonoBehaviour
 {
     public static PointManager Instance { get; private set; }
-    public int totalScore = 0;
+    public int totalScore = 0;   
     public int pointsPerCollectable = 1;
-    public Text scoreText;
+    public Text scoreText;  
     float displayScore;
     public int transitionSpeed = 50;
     public Canvas pointManager;
@@ -27,12 +27,13 @@ public class PointManager : MonoBehaviour
     {
         displayScore = Mathf.MoveTowards(displayScore, totalScore, transitionSpeed * Time.deltaTime);
         UpdateScoreDisplay();
-
+        
     }
 
     private void Awake()
     {
-        Instance = this;         
+
+        Instance = this;
         pointManager.enabled = false;
     }
 
@@ -47,9 +48,5 @@ public class PointManager : MonoBehaviour
         scoreText.text = "Score: " + totalScore;
     }
 
-    public void Start()
-    {
-        GameManager.Instance.lvlScore = totalScore;
-    }
-
+    
 }

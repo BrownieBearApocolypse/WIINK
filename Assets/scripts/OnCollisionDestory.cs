@@ -12,7 +12,8 @@ public class OnCollisionDestory : MonoBehaviour
             Destroy(gameObject);
             PointManager.Instance.totalScore += PointManager.Instance.pointsPerCollectable;
             PointManager.Instance.IncreaseScore(PointManager.Instance.totalScore);
-            
+            GameManager.Instance.score += GameManager.Instance.lvlScore;
+            GameManager.Instance.IncreaseScore(GameManager.Instance.score);
             //Debug.Log("GOtEm");
         }
     }
