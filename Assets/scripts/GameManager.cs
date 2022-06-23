@@ -49,7 +49,4 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         PlayerPrefs.SetInt("highscore", highScore);
     }
-
-
-
 }
