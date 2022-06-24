@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int score, highScore;
-    public int lvlScore;
+    public int lvlScore = 0;
 
     private void Start()
     {
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     public void LevelNO()
     {
-        lvlScore = 0;
+       lvlScore = 0;
     }
 
 }
