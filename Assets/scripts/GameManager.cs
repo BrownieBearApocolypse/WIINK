@@ -66,4 +66,10 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
     }
+
+    public void LevelNO()
+    {
+        lvlScore = 0;
+    }
+
 }
