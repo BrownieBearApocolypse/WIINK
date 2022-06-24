@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Load();
-        PointManager.Instance.totalScore = lvlScore;
+        Load();  
         
     }
 
