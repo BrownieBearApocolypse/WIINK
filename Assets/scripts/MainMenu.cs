@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public void LoadOn()
     {
         SceneManager.LoadScene(1);
+        GameManager.Instance.DeleteKey();
     }
 
     public void HowTo()
@@ -34,5 +35,6 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+        GameManager.Instance.DeleteKey();
     }
 }

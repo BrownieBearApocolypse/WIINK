@@ -62,4 +62,8 @@ public class GameManager : MonoBehaviour
         // if previous scene = this scene { PlayerPrefs.DeleteKey("score");  }
     }
 
+    public void DeleteKey()
+    {
+        score = 0;
+    }
 }

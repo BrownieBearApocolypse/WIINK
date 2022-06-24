@@ -23,6 +23,8 @@ public class EndLevelMenu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        GameManager.Instance.DeleteKey();
+
     }
 
     public void NextLevel()

@@ -24,12 +24,12 @@ public class GameManagerCanvas : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(0);
-        PlayerPrefs.DeleteKey("score");
+        GameManager.Instance.DeleteKey();
     }
 
     public void Exit()
     {
         Application.Quit();
-        PlayerPrefs.DeleteKey("score");
+        GameManager.Instance.DeleteKey();
     }
 }
