@@ -32,5 +32,4 @@ public class EndLevelMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    
 }
