@@ -71,4 +71,8 @@ public class GameManager : MonoBehaviour
        lvlScore = 0;
     }
 
+    public void FixScore()
+    {
+        score - 3; 
+    }
 }

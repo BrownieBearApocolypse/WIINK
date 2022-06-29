@@ -31,6 +31,7 @@ public class EndLevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameManager.Instance.LevelNO();
+        GameManager.Instance.FixScore();
     }
 
     public void NextLevel()
