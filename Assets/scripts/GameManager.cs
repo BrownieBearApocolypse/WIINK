@@ -73,6 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void FixScore()
     {
-        score - 3; 
+        score =- 3; 
     }
 }
