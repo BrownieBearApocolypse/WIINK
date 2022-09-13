@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public Canvas mainMenu;
-    public Canvas HowToMenu;
+    public Canvas howToMenu;
     
 
     private void Awake()
     {    
-        HowToMenu.enabled = false;
+        howToMenu.enabled = false;
     }
 
     public void LoadOn()
@@ -23,13 +23,13 @@ public class MainMenu : MonoBehaviour
     public void HowTo()
     {
         mainMenu.enabled = false;
-        HowToMenu.enabled=true;
+        howToMenu.enabled=true;
     }
 
     public void Return()
     {
         mainMenu.enabled = true;
-        HowToMenu.enabled = false;
+        howToMenu.enabled = false;
     }
 
     public void Exit()
