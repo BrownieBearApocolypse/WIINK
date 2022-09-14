@@ -14,7 +14,7 @@ public class PointManager : MonoBehaviour
     public int transitionSpeed = 50;
     public Canvas pointManager;
     
-
+    //enables the canvas displaying the lvl score when player collides with object
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -23,6 +23,7 @@ public class PointManager : MonoBehaviour
         }
     }
 
+    //updates the text on the score display as points collected
     public void Update()
     {
         displayScore = Mathf.MoveTowards(displayScore, totalScore, transitionSpeed * Time.deltaTime);
@@ -30,6 +31,7 @@ public class PointManager : MonoBehaviour
         
     }
 
+    //makes sure that the point canvas isn't visible during gameplay
     private void Awake()
     {
 
@@ -37,12 +39,14 @@ public class PointManager : MonoBehaviour
         pointManager.enabled = false;
     }
 
+    //adds poitns collected to toal score
     public void IncreaseScore(int totalScore)
     {
         totalScore += pointsPerCollectable;
         
     }
 
+    //says what the score text should say
     public void UpdateScoreDisplay()
     {
         scoreText.text = "Level Score: " + totalScore + "/3";
